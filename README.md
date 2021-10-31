@@ -1,9 +1,8 @@
-# game
-# Project Overview
+# Game
+
 
 ## Project Name
-
-The name of your project.
+Hang man Game
 
 ## Project Description
 
@@ -23,7 +22,7 @@ Show us the relations between your tables (there must be three minimum), as well
 
 ## Additional Technologies
 
-If you plan on using technologies outside of the scope of the course's content, please add them here. If you have developed any prototypes to test the technology, you can link them here as well if you'd like feedback.
+Three.js 
 
 ## MVP/PostMVP
 
@@ -39,8 +38,8 @@ The functionality will then be divided into two separate lists: MVP and PostMVP.
 #### PostMVP  
 *These are examples only. Replace with your own Post-MVP features.*
 
-- Add second API
-- Use local storage to save user favorites
+- Add another Game such as Tic-Tac-Toe, or 2048 in other pages
+- Adding dark mode
 
 ## Timeframes
 
