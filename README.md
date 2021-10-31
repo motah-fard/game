@@ -6,7 +6,7 @@ Hang man Game
 
 ## Project Description
 
-Use this section to describe your final project and perhaps any links to relevant sites that help convey the concept and/or functionality.
+Making hangman Game with th fron end using three.js. login as a user start games and getting coins with each true suggestion showing losses and wins in a page.
 
 ## Wireframes
 
