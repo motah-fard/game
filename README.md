@@ -52,13 +52,30 @@ Three.js
 - liking the games and put them in a specific page for the user
 
 ## Timeframes
+## Timeframes
+
+| Component                     | Priority | Estimated Time | Time Invested | Actual Time |
+| ----------------------------- | :------: | :------------: | :-----------: | :---------: |
+| Prep/Planning                 |    H     |      3hrs      |     3hrs      |    3hrs     |
+| Wireframes/Logo Design        |    H     |      1hrs      |     1hrs      |    1hrs     |
+| Initial Backend               |    H     |     2.5hrs     |    3.5hrs     |   3.5hrs    |
+| Login/ register.              |    H     |     2.5hrs     |    3.5hrs     |   3.5hrs    |
+| Initial React Structure       |    H     |     2.5hrs     |    3.5hrs     |   3.5hrs    |
+| Page Styling                  |    M     |      6hrs      |     6hrs      |    6hrs     |
+| Component Styling             |    M     |      4hrs      |     4hrs      |    4hrs     |
+| Routing Setup                 |    H     |     1.5hrs     |    1.5hrs     |   1.5hrs    |
+| Responsiveness                |    M     |      2hrs      |     2hrs      |    2hrs     |
+| Word Rendering                |    H     |     2.5hrs     |    3.5hrs     |   3.5hrs    |
+| Form Setup                    |    M     |     2.5hrs     |     2hrs      |    2hrs     |
+| Form Handling                 |    H     |      3hrs      |     2hrs      |    2hrs     |
+| Debugging                     |    M     |      3hrs      |    4.5hrs     |   4.5hrs    |
+| Three.js                      |    M     |      3hrs      |    4.5hrs     |   4.5hrs    |
+| Animation                     |    L     |      2hrs      |     1hrs      |    1hrs     |
+| Deployment                    |    H     |      2hrs      |      2hr      |     2hr     |
+| Total                         |          |     42hrs      |     42hrs     |    42hrs    |
+<!-- 
 
 
-| Component | Priority | Estimated Time | Time Invested | Actual Time |
-| --- | :---: |  :---: | :---: | :---: |
-| Adding Form | H | 3hrs| 3.5hrs | 3.5hrs |
-| Working with API | H | 3hrs| 2.5hrs | 2.5hrs |
-| Total | H | 6hrs| 5hrs | 5hrs |
 
 ## SWOT Analysis
 
