@@ -26,7 +26,10 @@ Show your component hierarchy here! Use [this](https://cms-assets.tutsplus.com/u
 
 ## ERD (Entity Relationship Diagram)
 
-Show us the relations between your tables (there must be three minimum), as well as their fields! Use [this](https://git.generalassemb.ly/sei-den-osos/data-modeling-intro-lesson#entity-relationship-diagrams-erds) as an example! In addition, please indicate which table will be used for full CRUD.
+Full CRUD : WORD TABLE
+![hellllllllllooooooooooooo 001](https://user-images.githubusercontent.com/61396761/139736404-bd2a0991-ebf5-4dde-aada-1b3afa1ee88f.jpeg)
+
+
 
 ## Additional Technologies
 
@@ -34,26 +37,21 @@ Three.js
 
 ## MVP/PostMVP
 
-The functionality will then be divided into two separate lists: MVP and PostMVP.  Carefully decide what is placed into your MVP, as the client will expect this functionality to be implemented upon project completion.  
-
 #### MVP 
-*These are examples only. Replace with your own MVP features.*
 
-- Find and use external api 
-- Render data on page 
-- Allow user to choose favorites 
+- Components (Front End) : Navbar, Login Page , Lanfin Page, Game view, Word Page, Edit or Add Word
+- Back End : Login, Register, User Model, Word Model, Win & Lose Model
 
 #### PostMVP  
-*These are examples only. Replace with your own Post-MVP features.*
 
 - Add another Game such as Tic-Tac-Toe, or 2048 in other pages
+- adding a table for getting comments from users
 - Adding dark mode
+- making floppy bird in 3D
+- liking the games and put them in a specific page for the user
 
 ## Timeframes
 
-Tell us how long you anticipate spending on each area of development. Be sure to consider how many hours a day you plan to be coding and how many days you have available until presentation day.
-
-Time frames are also key in the development cycle.  You have limited time to code all parts of your app.  Your estimates can then be used to evalute possibilities based on time needed and the actual time you have before the app must be submitted. It's always best to pad the time by a few hours so that you account for the unknown so add an additional hour or two to each component to play it safe. Throughout your project, keep track of your Time Invested and Actual Time and update your README regularly.
 
 | Component | Priority | Estimated Time | Time Invested | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
@@ -63,10 +61,10 @@ Time frames are also key in the development cycle.  You have limited time to cod
 
 ## SWOT Analysis
 
-#### Strengths:
+#### Strengths: Backe end wwith python analysing data that I want to work with
 
-#### Weaknesses:
+#### Weaknesses: I have not work with three.js before
 
-#### Opportunities:
+#### Opportunities: learning three.js
 
-#### Threats:
+#### Threats: -
