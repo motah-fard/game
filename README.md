@@ -11,7 +11,14 @@ Making hangman Game with the front end using three.js. login as a user start gam
 
 ## Wireframes
 
+![2](https://user-images.githubusercontent.com/61396761/139731425-c64c1814-f233-43af-80e2-fe6e2ae9c3de.jpg)
+![3](https://user-images.githubusercontent.com/61396761/139731428-9e57f331-6fad-4f22-8800-ae032e24be3e.jpg)
 
+![4](https://user-images.githubusercontent.com/61396761/139731435-6a146738-8ade-4337-b8c5-f4e03c749078.jpg)
+![5](https://user-images.githubusercontent.com/61396761/139731714-d06c5572-3d09-4a30-94e5-f3fbf3b53f49.jpg)
+![6](https://user-images.githubusercontent.com/61396761/139731722-200c6aaa-ce0a-4f99-a177-aeee3cde5357.jpg)
+![7](https://user-images.githubusercontent.com/61396761/139731725-ec3b8013-916e-43b0-b729-1c46a93cf3ac.jpg)
+![8](https://user-images.githubusercontent.com/61396761/139731731-691faeb5-4de5-4a7c-ab71-c1d03f87c687.jpg)
 
 ## Component Hierarchy
 
