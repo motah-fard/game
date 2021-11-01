@@ -73,7 +73,7 @@ Three.js
 | Animation                     |    L     |      2hrs      |     1hrs      |    1hrs     |
 | Deployment                    |    H     |      2hrs      |      2hr      |     2hr     |
 | Total                         |          |     42hrs      |     42hrs     |    42hrs    |
-<!-- 
+
 
 
 
