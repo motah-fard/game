@@ -2,15 +2,16 @@
 
 
 ## Project Name
-Hang man Game
+![1](https://user-images.githubusercontent.com/61396761/139731307-738994db-be38-49c3-9f42-05d33482118b.jpg)
+
 
 ## Project Description
 
-Making hangman Game with th fron end using three.js. login as a user start games and getting coins with each true suggestion showing losses and wins in a page.
+Making hangman Game with the front end using three.js. login as a user start games and getting coins with each true suggestion. 
 
 ## Wireframes
 
-Upload images of your wireframes to an image hosting site or add them to an assets folder in your repo and link them here with a description of each specific wireframe.
+
 
 ## Component Hierarchy
 
