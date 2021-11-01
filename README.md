@@ -22,7 +22,8 @@ Making hangman Game with the front end using three.js. login as a user start gam
 
 ## Component Hierarchy
 
-Show your component hierarchy here! Use [this](https://cms-assets.tutsplus.com/uploads/users/1795/posts/30352/image/GettingStartedWithReduxTutorial-React-Component-Structure.png) as an example.
+![helloooo 002](https://user-images.githubusercontent.com/61396761/139739139-adec47e1-baa0-4c76-b5c9-a2cdffd3fb79.jpeg)
+
 
 ## ERD (Entity Relationship Diagram)
 
