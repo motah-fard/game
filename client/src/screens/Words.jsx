@@ -9,10 +9,7 @@ const Words = (props) => {
     getAllWords().then((fetchWords) => setWords(fetchWords));
   }, []);
 
-  const handleClick = async (wordId) => {
-    const user = await addGame(wordId);
-    props.setUser(user);
-  };
+
   return (
     <div>
       {words.map((word) => (
