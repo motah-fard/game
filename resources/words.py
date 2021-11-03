@@ -34,6 +34,14 @@ def create_game(word_id):
     except DoesNotExist:
         return jsonify(message="Error getting Game."), 500
 
+@word.route('/wordbyid/<int:id>', methods=["GET"])
+def get_word_by_id(id):
+    try:
+        word = Word.get_by_id(id)
+        return jsonify(model_to_dict(word, backrefs=True))
+    except DoesNotExist:
+        return jsonify(message="Error getting the resources for word."), 500
+
 @word.route('/', methods=["POST"])
 @login_required
 def add_word():
@@ -41,4 +49,25 @@ def add_word():
     word = Word.create(**body, user =current_user)
     return jsonify(model_to_dict(word)), 201
 
+@word.route('/<int:id>', methods=['DELETE'])
+def delete_word(id):
+    (Word
+     .delete()
+     .where(Word.id == id)
+     .execute())
+    return jsonify(message=f"Word with id {id} deleted"), 200
+
+@word.route('/<int:id>', methods=['PUT'])
+def update_word(id):
+    try:
+        body = request.get_json()
+        (Word
+            .update(**body)
+            .where(Word.id==id)
+            .execute())
+        return jsonify(model_to_dict(Word.get_by_id(id))), 200
+    except DoesNotExist:
+        return jsonify(error=f"Word with id {id} not found."), 404
+    except AttributeError as err:
+        return jsonify(error=str(err)), 400
 
