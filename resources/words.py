@@ -34,7 +34,7 @@ def create_game(word_id):
     except DoesNotExist:
         return jsonify(message="Error getting Game."), 500
 
-@word.route('/wordbyid/<int:id>', methods=["GET"])
+@word.route('/<int:id>', methods=["GET"])
 def get_word_by_id(id):
     try:
         word = Word.get_by_id(id)
