@@ -79,7 +79,7 @@ Three.js
 
 ## SWOT Analysis
 
-#### Strengths: Backe end wwith python analysing data that I want to work with
+#### Strengths: Backend with python analysing data that I want to work with
 
 #### Weaknesses: I have not work with three.js before
 
