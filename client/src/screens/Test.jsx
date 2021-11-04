@@ -2,7 +2,7 @@ import React from "react";
 import { Canvas } from "@react-three/fiber";
 import { Mesh } from "three";
 import './styles.css'
-import {OrbitControls} from "@react-three/drei"
+import {OrbitControls, Stars} from "@react-three/drei"
 function Box(){
     return (
         <mesh>
@@ -14,6 +14,12 @@ function Box(){
 }
 export default function Test(){
     return <Canvas>
-        <Box/>
+        <OrbitControls/>
+        <Stars/>
+        <ambientLight intensity={0.5}/>
+        <spotLight
+        position={[10,15,10]} angle={0.3}
+        />
+        <Box />
     </Canvas>
 }
