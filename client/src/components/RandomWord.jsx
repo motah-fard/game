@@ -4,11 +4,11 @@ import { getAllWords } from "../services";
 
 const RandomWord = (props) => {
   const [words, setWords] = useState([]);
-  const [text, setText] = useState([]);
+  const [toggle, setToggle] = useState(false);
 
   useEffect(() => {
     getAllWords().then((fetchWords) => setWords(fetchWords));
-  },[]);//something here should
+  },[toggle]);//something here should
   console.log({ words });
   return (
     <div>
@@ -17,7 +17,7 @@ const RandomWord = (props) => {
       {words.Math.floor(Math.random)*words.length.text}
       </>
       ) : (
-          <>Hello</>
+          <></>
       )}
     </div>
   );

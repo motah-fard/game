@@ -8,6 +8,7 @@ import Register from "./screens/Register";
 import AddWord from "./screens/AddWord";
 import Words from './screens/Words'
 import RandomWord from "./components/RandomWord";
+import Test from "./screens/Test";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -33,6 +34,9 @@ function App() {
           </Route>
           <Route path='/random'>
             <RandomWord user={user} setUser={setUser}/>
+          </Route>
+          <Route path='/test'>
+            <Test/>
           </Route>
  
         </main>

@@ -10,7 +10,7 @@ import step5 from './images/5.jpg'
 import step6 from './images/6.jpg'
 
 class Hangman extends Component {
-    static defaultproops = {
+    static defaultProps = {
         maxGuess: 6,
         images: [step0, step1, step2, step3,step4, step5, step6]
     }
@@ -26,8 +26,10 @@ class Hangman extends Component {
     }
     render(){
         return(
-            <div>
-                <h3>MOTY</h3>
+            <div className="Hangman container">
+
+                <h3 className='text-center'>MOTY</h3> 
+                <div className='float-right'>Wrong Guesses: {this.state.mistake} of {this.props.maxGuess}</div>
             </div>
         )
     }
