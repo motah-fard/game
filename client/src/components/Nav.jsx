@@ -12,6 +12,8 @@ const Nav = (props) => {
       <Link to="/">Home</Link>
       {props.user ? (
         <>
+          <Link to='/random'>RRR</Link>
+          <Link to='/words'>Words</Link>
           <Link to="/new/word">Add a new word to the list!</Link>
           <button onClick={handleClick}>Log out!</button>
         </>
@@ -19,6 +21,7 @@ const Nav = (props) => {
         <>
           <Link to="/login">Login</Link>
           <Link to="/register">Register</Link>
+          
         </>
       )}
     </nav>

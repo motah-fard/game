@@ -7,6 +7,7 @@ import Login from "./screens/Login";
 import Register from "./screens/Register";
 import AddWord from "./screens/AddWord";
 import Words from './screens/Words'
+import RandomWord from "./components/RandomWord";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -30,6 +31,10 @@ function App() {
           <Route path="/new/word">
             <AddWord/>
           </Route>
+          <Route path='/random'>
+            <RandomWord user={user} setUser={setUser}/>
+          </Route>
+ 
         </main>
       </Switch>
     </div>

@@ -12,6 +12,7 @@ const Words = (props) => {
 
   return (
     <div>
+      <h1>Hello {props.user.username}!</h1>
       {words.map((word) => (
         <div>
           <h3>{word.text}</h3>
