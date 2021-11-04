@@ -2,6 +2,7 @@ import React from "react";
 import { Canvas } from "@react-three/fiber";
 import { Mesh } from "three";
 import './styles.css'
+import {OrbitControls} from "@react-three/drei"
 function Box(){
     return (
         <mesh>
