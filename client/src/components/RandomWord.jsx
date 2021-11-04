@@ -12,13 +12,13 @@ const RandomWord = (props) => {
   console.log({ words });
   return (
     <div>
-      {words.text? (
-      <>
+      {/* {words.text? (
+      <> */}
       {words.Math.floor(Math.random)*words.length.text}
-      </>
+      {/* </>
       ) : (
           <></>
-      )}
+      )} */}
     </div>
   );
 };

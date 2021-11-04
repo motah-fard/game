@@ -8,11 +8,11 @@ import step3 from './images/3.jpg'
 import step4 from './images/4.jpg'
 import step5 from './images/5.jpg'
 import step6 from './images/6.jpg'
-
+import Test from '../screens/Test'
 class Hangman extends Component {
     static defaultProps = {
         maxGuess: 6,
-        images: [step0, step1, step2, step3,step4, step5, step6]
+        images: [<Test/>, step1, step2, step3,step4, step5, step6]
     }
     constructor(props){
         super(props);
