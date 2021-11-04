@@ -9,6 +9,7 @@ import AddWord from "./screens/AddWord";
 import Words from './screens/Words'
 import RandomWord from "./components/RandomWord";
 import Test from "./screens/Test";
+import Hangman from "./components/Hangman";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -38,7 +39,9 @@ function App() {
           <Route path='/test'>
             <Test/>
           </Route>
- 
+          <Route path='/hangman'>
+            <Hangman user={user} setUser={setUser}/>
+          </Route>
         </main>
       </Switch>
     </div>

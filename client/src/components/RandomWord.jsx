@@ -8,17 +8,17 @@ const RandomWord = (props) => {
 
   useEffect(() => {
     getAllWords().then((fetchWords) => setWords(fetchWords));
-  },[toggle]);//something here should
-  console.log({ words });
+  },[!toggle]);
+  // console.log({ words });
   return (
     <div>
-      {/* {words.text? (
-      <> */}
-      {words.Math.floor(Math.random)*words.length.text}
-      {/* </>
+      {words.length? (
+      <>
+      {words[Math.floor(Math.random()*words.length)].text}
+      </>
       ) : (
           <></>
-      )} */}
+      )}
     </div>
   );
 };

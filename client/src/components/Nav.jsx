@@ -12,6 +12,7 @@ const Nav = (props) => {
       <Link to="/">Home</Link>
       {props.user ? (
         <>
+        <Link to='/hangman'>Hangman</Link>
         <Link to='/test'>TEST</Link>
           <Link to='/random'>RRR</Link>
           <Link to='/words'>Words</Link>

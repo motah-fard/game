@@ -1,10 +1,9 @@
 import LandingPage from "./LandingPage";
 import React from "react";
 import Hangman from "../components/Hangman";
-const Home = () => {
+const Home = (props) => {
   return (
     <section>
-      <Hangman/>
       {/* <LandingPage/> */}
       
     </section>

@@ -3,7 +3,7 @@ import axios from "axios";
 const apiURL =
   process.env.NODE_ENV === "development"
     ? "http://localhost:8000"
-    : "produrl";
+    : process.env.REACT_APP_API_URL;
 axios.defaults.withCredentials = true;
 export const defaultRoute = async () => {
   try {
