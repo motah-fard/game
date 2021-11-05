@@ -5,7 +5,7 @@ import "./styles.css";
 import { OrbitControls, Stars } from "@react-three/drei";
 function Box() {
   return (
-    <mesh position={[0, -2.5, 0]}>
+    <mesh position={[6, -2.5, -10]}>
       <boxBufferGeometry attach="geometry" args={[1.2, 3, 0.5]}  />
       <meshLambertMaterial attach="material" color="oldlace" />
     </mesh>
@@ -13,7 +13,7 @@ function Box() {
 }
 function Box_2() {
     return (
-      <mesh position={[-2, -1, 0]}>
+      <mesh position={[4, -1, -10]}>
         <boxBufferGeometry attach="geometry" args={[2, 0.5, 0.5]}  />
         <meshLambertMaterial attach="material" color="oldlace" />
       </mesh>
@@ -21,7 +21,7 @@ function Box_2() {
   }
   function Box_3() {
     return (
-      <mesh position={[2, -1, 0]}>
+      <mesh position={[8, -1, -10]}>
         <boxBufferGeometry attach="geometry" args={[2, 0.5, 0.5]}  />
         <meshLambertMaterial attach="material" color="oldlace" />
       </mesh>
@@ -29,7 +29,7 @@ function Box_2() {
   }
   function Box_4() {
     return (
-      <mesh position={[2, -4, 0]}>
+      <mesh position={[8, -4, -10]}>
         <boxBufferGeometry attach="geometry" args={[2, 0.5, 0.5]}  />
         <meshLambertMaterial attach="material" color="oldlace" />
       </mesh>
@@ -37,7 +37,7 @@ function Box_2() {
   }
   function Box_5() {
     return (
-      <mesh position={[-2, -4, 0]}>
+      <mesh position={[4, -4, -10]}>
         <boxBufferGeometry attach="geometry" args={[2, 0.5, 0.5]}  />
         <meshLambertMaterial attach="material" color="oldlace" />
       </mesh>
@@ -45,14 +45,44 @@ function Box_2() {
   }
 function Circle() {
   return (
-    <mesh position={[0, 0, 0]}>
+    <mesh position={[6, 0, -10]}>
         
     <octahedronBufferGeometry attach="geometry" args={[1, 1]} />
-      <meshStandardMaterial attach="material" color="white" transparent  />
+      <meshPhongMaterial attach="material" color="white" transparent  />
       
     </mesh>
   );
 }
+function Box_0() {
+    return (
+      <mesh position={[6, 0, -10]}>
+          
+      <octahedronBufferGeometry attach="geometry" args={[1, 1]} />
+        <meshStandardMaterial attach="material" color="white" transparent  />
+        
+      </mesh>
+    );
+  }
+  function Box_() {
+    return (
+      <mesh position={[6, 0, -10]}>
+          
+      <octahedronBufferGeometry attach="geometry" args={[1, 1]} />
+        <meshStandardMaterial attach="material" color="white" transparent  />
+        
+      </mesh>
+    );
+  }
+  function Box__() {
+    return (
+      <mesh position={[6, 0, -10]}>
+          
+      <octahedronBufferGeometry attach="geometry" args={[1, 1]} />
+        <meshStandardMaterial attach="material" color="white" transparent  />
+        
+      </mesh>
+    );
+  }
 // function Torus() {
 //     return (
 //       <mesh position={[0, 0, 0]}>
@@ -64,11 +94,11 @@ function Circle() {
 
 export default function Test() {
   return (
-    <div style={{  width: 2000, height: 500 }}>
+    <div style={{  width: 500, height: 500 }} id="three">
     <Canvas >
       <OrbitControls />
-      <Stars />
-      <ambientLight intensity={0.5} />
+      <Stars color='Yellow'/>
+      <ambientLight intensity={1} />
       <spotLight position={[10, 15, 10]} angle={0.6} />
       <Box  />
       <Box_2/>
