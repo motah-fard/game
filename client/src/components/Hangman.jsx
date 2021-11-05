@@ -4,56 +4,54 @@ import React from "react";
 import { useEffect, useState } from "react";
 import { getAllWords } from "../services";
 
-
 const Hangman = (props) => {
-    const [words, setWords] = useState([]);
-    const [toggle, setToggle] = useState(false);
-    const [randomWord, setRandomWord] = useState("");
-    const [value,setValue] = useState('')
-  
-    useEffect(() => {
-      getAllWords().then((fetchWords) => setWords(fetchWords));
-    }, [toggle]);
-    // console.log( words );
-    useEffect(() => {
-      if (words.length !== 0) {
-        const text = words[Math.floor(Math.random() * words.length)].text;
-        // console.log(text)
-        setRandomWord(text);
-        // console.log(randomWord);
-      }
-    }, [words]);
-//   console.log(props.randomWord);
-  
-  const output = randomWord.toUpperCase().split("");
+  const [words, setWords] = useState([]);
+  const [toggle, setToggle] = useState(false);
+  const [randomWord, setRandomWord] = useState("");
+  const [value, setValue] = useState('');
+  const [guess, setGuess] = useState('')
+//getting a random word from database
   useEffect(() => {
-    letters.push(value)
-    const guess = output.map((letter) => letters.includes(letter) ? letter : '-')
-  }, [value]);
+    getAllWords().then((fetchWords) => setWords(fetchWords));
+  }, [toggle]);
 
-  let letters = ['A'];
-  const guess = output.map((letter) => letters.includes(letter) ? letter : '-')
-  function getButtons () {
-    const array = "abcdefghijklmnopqrstuvwxyz".toUpperCase().split("");
+  useEffect(() => {
+    if (words.length !== 0) {
+      const text = words[Math.floor(Math.random() * words.length)].text;
+      setRandomWord(text);
+    }
+  }, [words]);
+
  
+
+  // making the buttons
+  function getButtons() {
+    const array = "abcdefghijklmnopqrstuvwxyz".toUpperCase().split("");
+
     return array.map((letter) => {
-      return <button value={letter} >{letter}</button>;
+      return <button value={letter}>{letter}</button>;
     });
-  };
-useEffect(() => {
-    letters.push(value)
+  }
+ 
+  useEffect(() => {
+    // guessing a letter like A and see if it is in the letter or not ()
+
+    let letters = [];
+    letters.push(value);
+    const output = randomWord.toUpperCase().split("");
+    const guess = output.map((letter) =>
+    letters.includes(letter) ? letter : "-"
+    
+  );
+  setGuess(guess)
     console.log(letters);
   }, [value]);
-
+ 
   return (
     <div>
       {guess}
-      {/* <form onSubmit={handleClick}> */}
-      <div onClick={(e)=>setValue(e.target.value)}>{getButtons()}</div>
-      {/* </form> */}
+      <div onClick={(e) => setValue(e.target.value)}>{getButtons()}</div>
       {randomWord}
-      
-      
     </div>
   );
 };
