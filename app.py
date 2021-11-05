@@ -46,7 +46,7 @@ app.register_blueprint(word)
 origins=['http://localhost:3000']
 # if we're on heroku
 if 'DATABASE_URL' in os.environ:
-    initialize([Cartoon, User, Favorite])
+    initialize([User, Word, Game])
     # configure cookie to only work on secure connections (HTTPS)
     app.config['SESSION_COOKIE_SECURE'] = True
     # configure cookie to NOT work on unsecure connections (HTTP)

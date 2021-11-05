@@ -74,7 +74,7 @@ const Hangman = (props) => {
   );
   return (
     <div>
-      <div>
+      <div className='hangman'>
         {steps[wrong]}
       </div>
       {guess}
