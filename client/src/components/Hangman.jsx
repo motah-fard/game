@@ -77,9 +77,9 @@ const Hangman = (props) => {
       <div className='hangman'>
         {steps[wrong]}
       </div>
-      {guess}
       <div>{getButtons()}</div>
       {randomWord}
+      {guess}
     </div>
   );
 };
