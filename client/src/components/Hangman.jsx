@@ -2,6 +2,7 @@ import "./Hangman.css";
 import React from "react";
 import { useEffect, useState } from "react";
 import { getAllWords } from "../services";
+import Test from "../screens/Test";
 
 const Hangman = (props) => {
   const [words, setWords] = useState([]);
@@ -10,6 +11,7 @@ const Hangman = (props) => {
   const [guessedLetters, setGuessedLetters] = useState([]);
   const [wrong, setWrong] = useState(0);
   //getting a random word from database'
+  const steps = [<Test/>, 0, 1, 2, 3, 4, 5]
   useEffect(() => {
     getAllWords().then((fetchWords) => setWords(fetchWords));
   }, [toggle]);
@@ -22,16 +24,19 @@ const Hangman = (props) => {
   }, [words]);
   useEffect(() => {
     //if every letter of the randomWord is inside of guessed letters
-    if( randomWord && randomWord.split('').every((letter)=> guessedLetters.includes(letter))){
+    if (
+      randomWord &&
+      randomWord.split("").every((letter) => guessedLetters.includes(letter))
+    ) {
       console.log("You WON");
     }
-  },[guessedLetters]);
+  }, [guessedLetters]);
   useEffect(() => {
     //if wrong is bigger than 6 say you lost
-    if( wrong >= 5){
+    if (wrong >= 5) {
       console.log("You LOST");
     }
-  },[wrong]);
+  }, [wrong]);
 
   // making the buttons
   function getButtons() {
@@ -48,10 +53,9 @@ const Hangman = (props) => {
       //if letter is not in the randomword
       if (!randomWord.includes(letter)) {
         setWrong(wrong + 1);
+        // return wrong;
         console.log(wrong);
       }
-      // =+ to wrong
-      //( if the guessedletter changes useeffect)
     }
   }
   const output = randomWord.toUpperCase().split("");
@@ -60,7 +64,10 @@ const Hangman = (props) => {
   );
   return (
     <div>
+      
+      <Test />
       {guess}
+      {wrong}
       <div>{getButtons()}</div>
       {randomWord}
     </div>
