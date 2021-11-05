@@ -1,8 +1,9 @@
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 
 
-class Alphabet extends Component {
-  getButtons = (l) => {
+function Alphabet (){
+  const [buttonLetter, setButtonLetter] = useState ('');
+  function getButtons () {
     const array = "abcdefghijklmnopqrstuvwxyz".toUpperCase().split("");
 
     return array.map((letter) => {
@@ -10,9 +11,12 @@ class Alphabet extends Component {
     });
   };
 
-  render() {
-    return <div>{this.getButtons()}</div>;
-  }
+
+
+    return (
+    <div>{getButtons()}</div>
+    )
+
 }
 
 export default Alphabet;
