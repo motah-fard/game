@@ -12,8 +12,6 @@ function Alphabet (){
     });
   };
 
-
-
     return (
     <div>{getButtons()}</div>
     )
