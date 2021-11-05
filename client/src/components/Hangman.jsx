@@ -10,6 +10,7 @@ import Test4 from '../screens/Test4';
 import Test5 from '../screens/Test5';
 import Test6 from '../screens/Test6';
 import Test7 from '../screens/Test7';
+import {useHistory} from "react-router-dom"
 
 
 const Hangman = (props) => {
@@ -18,6 +19,7 @@ const Hangman = (props) => {
   const [randomWord, setRandomWord] = useState("");
   const [guessedLetters, setGuessedLetters] = useState([]);
   const [wrong, setWrong] = useState(0);
+  const history = useHistory();
   //getting a random word from database'
   const steps = [<Test1/>, <Test2/>, <Test3/>, <Test4/>, <Test5/>, <Test6/>, <Test7/>, <Test/>]
   useEffect(() => {
