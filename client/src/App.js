@@ -12,6 +12,7 @@ import Hangman from "./components/Hangman";
 
 function App() {
   const [user, setUser] = useState(null);
+  
   return (
     <div className="App">
       <Nav user={user} setUser={setUser} />

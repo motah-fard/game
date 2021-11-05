@@ -24,10 +24,10 @@ const Hangman = (props) => {
     }, [words]);
   console.log(props.randomWord);
   
-  const output = randomWord.split("");
+  const output = randomWord.toUpperCase().split("");
 
 
-  let letters = ['a'];
+  let letters = ['A'];
   const guess = output.map((letter) => letters.includes(letter) ? letter : '-')
 
 
