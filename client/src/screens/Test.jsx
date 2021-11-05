@@ -77,12 +77,23 @@ function Box_0() {
     return (
       <mesh position={[0, -8, -10]}>
           
-          <boxBufferGeometry attach="geometry" args={[14, 0.5, 5]}  />
+          <boxBufferGeometry attach="geometry" args={[14, 0.5, 8]}  />
         <meshStandardMaterial attach="material" color="white" transparent  />
         
       </mesh>
     );
   }
+  function Box___() {
+    return (
+      <mesh position={[6, 3, -10]}>
+          
+          <boxBufferGeometry attach="geometry" args={[0.5, 3.5, 0.5]}  />
+        <meshStandardMaterial attach="material" color="white" transparent  />
+        
+      </mesh>
+    );
+  }
+
 // function Torus() {
 //     return (
 //       <mesh position={[0, 0, 0]}>
@@ -114,6 +125,7 @@ export default function Test() {
       <Box_0/>
       <Box_/>
       <Box__/>
+      <Box___/>
       <Circle/>
     </Canvas>
     </div>
