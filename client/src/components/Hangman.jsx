@@ -39,14 +39,16 @@ const Hangman = (props) => {
       randomWord.split("").every((letter) => guessedLetters.includes(letter))
     ) {
       console.log("You WON");
+      history.push("/home")// make a jsx file for Won page
     }
   }, [guessedLetters]);
   useEffect(() => {
     //if wrong is bigger than 6 say you lost
     if (wrong >= 5) {
       console.log("You LOST");
-      history.push("/home");
+      history.push("/home"); // make a jsx file for lost page
     }
+
   }, [wrong]);
 
   // making the buttons
