@@ -1,6 +1,5 @@
 import LandingPage from "./LandingPage";
 import React from "react";
-import Hangman from "../components/Hangman";
 const Home = (props) => {
   return (
     <section>
