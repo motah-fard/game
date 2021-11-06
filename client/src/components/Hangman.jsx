@@ -45,6 +45,7 @@ const Hangman = (props) => {
     //if wrong is bigger than 6 say you lost
     if (wrong >= 5) {
       console.log("You LOST");
+      history.push("/home");
     }
   }, [wrong]);
 

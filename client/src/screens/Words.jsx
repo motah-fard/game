@@ -8,7 +8,7 @@ const Words = (props) => {
   useEffect(() => {
     getAllWords().then((fetchWords) => setWords(fetchWords));
   }, []);
-
+//delete edit button should goes here
 
   return (
     <div>
