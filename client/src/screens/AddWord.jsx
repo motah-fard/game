@@ -1,25 +1,36 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useHistory, useParams } from "react-router-dom";
-import { createWord,  } from "../services";
+import { createWord, updateWord, getWordsById } from "../services";
 
-import React from 'react';
+import React from "react";
 
 const AddWord = () => {
-    const [text, setText] = useState("");
-    const history = useHistory();
-    const params = useParams();
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        const newWord = {
-            text,
-        }
-        await createWord(newWord);
-        history.push("/words");
-      }
-    
-    return (
-        <div>
-        <form onSubmit={handleSubmit}>
+  const [text, setText] = useState("");
+  const history = useHistory();
+  const params = useParams();
+  useEffect(() => {
+    if (params.id) {
+      getWordsById(params.id).then((word) => {
+        setText(word.text);
+      });
+    }
+  }, [params.id]);
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const newWord = {
+      text,
+    };
+    if (params.id) {
+      await updateWord(params.id, newWord);
+    } else {
+      await createWord(newWord);
+    }
+    history.push("/words");
+  };
+
+  return (
+    <div>
+      <form onSubmit={handleSubmit}>
         <label htmlFor="text">Word:</label>
         <input
           id="text"
@@ -29,11 +40,9 @@ const AddWord = () => {
           required
         />
         <button type="submit">Create Word</button>
-        </form>
-        
-            
-        </div>
-    );
+      </form>
+    </div>
+  );
 };
 
 export default AddWord;
