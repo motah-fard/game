@@ -1,12 +1,13 @@
 import { useState } from "react";
-import { useHistory } from "react-router-dom";
-import { createWord } from "../services";
+import { useHistory, useParams } from "react-router-dom";
+import { createWord,  } from "../services";
 
 import React from 'react';
 
 const AddWord = () => {
     const [text, setText] = useState("");
     const history = useHistory();
+    const params = useParams();
     const handleSubmit = async (e) => {
         e.preventDefault();
         const newWord = {

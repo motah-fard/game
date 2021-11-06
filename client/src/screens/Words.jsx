@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getAllWords, addGame } from "../services";
+import { getAllWords } from "../services";
 import React from "react";
 
 const Words = (props) => {
