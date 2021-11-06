@@ -71,7 +71,7 @@ export const getWordsById = async (id)=> {
     console.log(error.message)
   }
 }
-// delete word 
+// delete the word 
 export const deleteWord = async(id)=>{
   try {
     const response =await axios.delete(`${apiURL}/${id}`);
@@ -80,10 +80,10 @@ export const deleteWord = async(id)=>{
     console.log(error.message)
   }
 }
-
-export const updateWord = async (id) => {
+//updating the word
+export const updateWord = async (id, word) => {
   try {
-      const response = await axios.put(`${apiURL}/${id}`);
+      const response = await axios.put(`${apiURL}/${id}`, word);
       return response.data;
     } catch (error) {
     console.error(error.message);
