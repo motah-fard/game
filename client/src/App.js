@@ -36,6 +36,9 @@ function App() {
           <Route path="/hangman">
             <Hangman user={user} setUser={setUser} />
           </Route>
+          <Route path="/edit-word/:id">
+            <AddWord />
+          </Route>
         </main>
       </Switch>
     </div>
