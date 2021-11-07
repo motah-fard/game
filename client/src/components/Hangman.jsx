@@ -3,15 +3,14 @@ import React from "react";
 import { useEffect, useState } from "react";
 import { getAllWords } from "../services";
 import Test from "../screens/Test";
-import Test1 from '../screens/Test1';
-import Test2 from '../screens/Test2';
-import Test3 from '../screens/Test3';
-import Test4 from '../screens/Test4';
-import Test5 from '../screens/Test5';
-import Test6 from '../screens/Test6';
-import Test7 from '../screens/Test7';
-import {useHistory} from "react-router-dom"
-
+import Test1 from "../screens/Test1";
+import Test2 from "../screens/Test2";
+import Test3 from "../screens/Test3";
+import Test4 from "../screens/Test4";
+import Test5 from "../screens/Test5";
+import Test6 from "../screens/Test6";
+import Test7 from "../screens/Test7";
+import { useHistory } from "react-router-dom";
 
 const Hangman = (props) => {
   const [words, setWords] = useState([]);
@@ -21,7 +20,16 @@ const Hangman = (props) => {
   const [wrong, setWrong] = useState(0);
   const history = useHistory();
   //getting a random word from database'
-  const steps = [<Test1/>, <Test2/>, <Test3/>, <Test4/>, <Test5/>, <Test6/>, <Test7/>, <Test/>]
+  const steps = [
+    <Test1 />,
+    <Test2 />,
+    <Test3 />,
+    <Test4 />,
+    <Test5 />,
+    <Test6 />,
+    <Test7 />,
+    <Test />,
+  ];
   useEffect(() => {
     getAllWords().then((fetchWords) => setWords(fetchWords));
   }, [toggle]);
@@ -39,7 +47,7 @@ const Hangman = (props) => {
       randomWord.split("").every((letter) => guessedLetters.includes(letter))
     ) {
       console.log("You WON");
-      history.push("/home")// make a jsx file for Won page
+      history.push("/home"); // make a jsx file for Won page
     }
   }, [guessedLetters]);
   useEffect(() => {
@@ -48,7 +56,6 @@ const Hangman = (props) => {
       console.log("You LOST");
       history.push("/home"); // make a jsx file for lost page
     }
-
   }, [wrong]);
 
   // making the buttons
@@ -77,13 +84,10 @@ const Hangman = (props) => {
   );
   return (
     <div>
-       {guess}
-      <div className='hangman'>
-        {steps[wrong]}
-      </div>
+      {guess}
+      <div className="hangman">{steps[wrong]}</div>
       <div>{getButtons()}</div>
       {randomWord}
-     
     </div>
   );
 };

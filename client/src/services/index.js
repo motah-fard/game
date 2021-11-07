@@ -65,7 +65,7 @@ export const addGame = async (wordId) => {
 //get the word by id 
 export const getWordsById = async (id)=> {
   try {
-    const response =await axios.get(`${apiURL}/${id}`);
+    const response =await axios.get(`${apiURL}/words/${id}`);
     return response.data;
   } catch (error) {
     console.log(error.message)
@@ -74,7 +74,7 @@ export const getWordsById = async (id)=> {
 // delete the word 
 export const deleteWord = async(id)=>{
   try {
-    const response =await axios.delete(`${apiURL}/${id}`);
+    const response =await axios.delete(`${apiURL}/words/${id}`);
     return response.data;
   } catch (error) {
     console.log(error.message)
@@ -83,7 +83,7 @@ export const deleteWord = async(id)=>{
 //updating the word
 export const updateWord = async (id, word) => {
   try {
-      const response = await axios.put(`${apiURL}/${id}`, word);
+      const response = await axios.put(`${apiURL}/words/${id}`, word);
       return response.data;
     } catch (error) {
     console.error(error.message);

@@ -3,7 +3,7 @@ import { useHistory, useParams } from "react-router-dom";
 import { createWord, updateWord, getWordsById } from "../services";
 
 import React from "react";
-
+//add or edit word
 const AddWord = () => {
   const [text, setText] = useState("");
   const history = useHistory();
