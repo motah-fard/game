@@ -99,11 +99,11 @@ const Hangman = (props) => {
   );
   return (
     <div>
-      <h1>{guess}</h1>
-
-      <div className="hangman">{steps[wrong]}</div>
-      <div>{getButtons()}</div>
-      {props.randomWord}
+      
+      <h3 >Wrong Guesses: {wrong} out of {6}</h3>
+      <h1 >{guess}</h1>
+      <div >{steps[wrong]}</div>
+      <div >{getButtons()}</div>
     </div>
   );
 };
