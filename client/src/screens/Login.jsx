@@ -2,6 +2,7 @@ import { useState } from "react";
 import { login } from "../services";
 import { useHistory } from "react-router-dom";
 import React from "react";
+import './Login.css'
 
 const Login = (props) => {
   const [username, setUsername] = useState("");
@@ -19,7 +20,7 @@ const Login = (props) => {
   };
 
   return (
-    <div>
+    <div className="add-container">
       <h3>Login</h3>
       <form onSubmit={handleSubmit}>
         <label htmlFor="username">Username:</label>

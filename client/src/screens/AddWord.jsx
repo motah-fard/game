@@ -31,10 +31,10 @@ const AddWord = () => {
   };
 
   return (
-    <div >
+    <div className="word-entry" >
       {params.id ? (<h4>Edit Word</h4>) : (<h4>Add a new Word</h4>)}
       <form onSubmit={handleSubmit} className="add-container">
-        <div>
+        <div >
         <label htmlFor="text">Word:</label>
         <input
           id="text"
