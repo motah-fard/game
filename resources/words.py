@@ -75,17 +75,49 @@ def update_word(id):
     except AttributeError as err:
         return jsonify(error=str(err)), 400
 
-# @word.route('/<int:id>', methods=['PUT'])
-# def update_word(id):
-#     try:
-#         body = request.get_json()
-#         (Word
-#             .update(**body)
-#             .where(Word.id==id)
-#             .execute())
-#         return jsonify(model_to_dict(Word.get_by_id(id))), 200
-#     except DoesNotExist:
-#         return jsonify(error=f"Word with id {id} not found."), 404
-#     except AttributeError as err:
-#         return jsonify(error=str(err)), 400
+# get the game by id
+@word.route('/game/<int:id>', methods=["GET"])
+def get_game_by_id(id):
+    try:
+        game = Game.get_by_id(id)
+        return jsonify(model_to_dict(game, backrefs=True))
+    except DoesNotExist:
+        return jsonify(message="Error getting the resources for game."), 500
 
+# delete the game
+@word.route('/game/<int:id>', methods=['DELETE'])
+def delete_game(id):
+    try:
+        (Game
+            .delete()
+            .where(Game.id == id)
+            .execute())
+        return jsonify(message=f"Game with id {id} deleted"), 200
+    except DoesNotExist:
+        return jsonify(message="error getting game."), 500
+
+# update the game
+@word.route('/<int:id>', methods=['PUT'])
+def update_game(id):
+    try:
+        body = request.get_json()
+        (Game
+            .update(**body)
+            .where(Game.id==id)
+            .execute())
+        return jsonify(model_to_dict(Game.get_by_id(id))), 200
+    except DoesNotExist:
+        return jsonify(error=f"game with id {id} not found."), 404
+    except AttributeError as err:
+        return jsonify(error=str(err)), 400
+
+#  get all the games
+
+@word.route('/games')
+@login_required
+def get_games():
+    try:
+        games = [model_to_dict(game) for game in Game]
+        return jsonify(games)
+    except:
+        return jsonify(message="Not able to get games")

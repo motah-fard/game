@@ -7,12 +7,12 @@ from game import Game
 from word import Word
 
 
-game = Blueprint('games', __name__, url_prefix='/games/game')
+game = Blueprint('games', __name__, url_prefix='/game/game')
 @game.route('/')
 @login_required
 
-
-@game.route('/game/<int:id>', methods=['PUT'])
+# update the game
+@game.route('/<int:id>', methods=['PUT'])
 def update_game(id):
     try:
         body = request.get_json()
@@ -22,6 +22,29 @@ def update_game(id):
             .execute())
         return jsonify(model_to_dict(Game.get_by_id(id))), 200
     except DoesNotExist:
-        return jsonify(error=f"Word with id {id} not found."), 404
+        return jsonify(error=f"game with id {id} not found."), 404
     except AttributeError as err:
         return jsonify(error=str(err)), 400
+
+# delete the game
+@game.route('/<int:id>', methods=['DELETE'])
+def delete_game(id):
+    try:
+        (Game
+            .delete()
+            .where(Game.id == id)
+            .execute())
+        return jsonify(message=f"Game with id {id} deleted"), 200
+    except DoesNotExist:
+        return jsonify(message="error getting game."), 500
+
+# get the game by id
+@game.route('/<int:id>', methods=["GET"])
+def get_game_by_id(id):
+    try:
+        game = Game.get_by_id(id)
+        return jsonify(model_to_dict(game, backrefs=True))
+    except DoesNotExist:
+        return jsonify(message="Error getting the resources for game."), 500
+
+# get all games
