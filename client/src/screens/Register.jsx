@@ -25,7 +25,7 @@ const Register = (props) => {
   return (
     <section className="add-container">
       <h3>Register</h3>
-      <form onSubmit={handleSubmit}>
+      <form className="register-entry" onSubmit={handleSubmit}>
         <label htmlFor="name">Name:</label>
         <input
           id="name"

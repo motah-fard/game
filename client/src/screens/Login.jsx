@@ -22,7 +22,7 @@ const Login = (props) => {
   return (
     <div className="add-container">
       <h3>Login</h3>
-      <form onSubmit={handleSubmit}>
+      <form className="login-entry" onSubmit={handleSubmit}>
         <label htmlFor="username">Username:</label>
         <input
           id="username"
