@@ -1,12 +1,12 @@
 import { useState } from "react";
 import { login } from "../services";
-
+import { useHistory } from "react-router-dom";
 import React from "react";
 
 const Login = (props) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-
+  const history = useHistory();
   const handleSubmit = async (e) => {
     e.preventDefault();
     const userInfo = {
@@ -15,6 +15,7 @@ const Login = (props) => {
     };
     const user = await login(userInfo);
     props.setUser(user);
+    history.push("/");
   };
 
   return (

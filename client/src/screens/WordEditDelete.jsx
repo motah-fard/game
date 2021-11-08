@@ -10,7 +10,7 @@ const WordEditDelete = (props) => {
 
   return (
     <div>
-      <h5>{props.word.text}</h5>
+      <h5>{props.word.text.toUpperCase()}</h5>
       <Link to={`/edit-word/${ID}`}>
         <TiEdit className="edit-icon" size="35px" />
       </Link>
