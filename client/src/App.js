@@ -9,6 +9,8 @@ import AddWord from "./screens/AddWord";
 import Words from "./screens/Words";
 import Hangman from "./components/Hangman";
 import Games from "./screens/Games";
+import Lose from "./screens/Lose";
+import Win from "./screens/Win";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -69,6 +71,12 @@ function App() {
           </Route>
           <Route path="/edit-word/:id">
             <AddWord />
+          </Route>
+          <Route path="/win">
+            <Win user={user} setUser={setUser}/>
+          </Route>
+          <Route path="/lose">
+            <Lose user={user} setUser={setUser}/>
           </Route>
         </main>
       </Switch>

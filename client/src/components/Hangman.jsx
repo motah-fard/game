@@ -61,14 +61,14 @@ const Hangman = (props) => {
       // update();
 
       console.log("You WON");
-      history.push("/home"); // make a jsx file for Won page
+      history.push("/win"); // make a jsx file for Won page
     }
   }, [guessedLetters]);
   useEffect(() => {
     //if wrong is bigger than 6 say you lost
     if (wrong >= 5) {
       console.log("You LOST");
-      history.push("/home"); // make a jsx file for lost page
+      history.push("/lose"); // make a jsx file for lost page
     }
   }, [wrong]);
 
