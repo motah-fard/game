@@ -3,11 +3,7 @@ import { Canvas } from "@react-three/fiber";
 import "./styles.css";
 // import Roboto from "./Roboto_Regular.json"
 import * as THREE from "three";
-import {
-  OrbitControls,
-  Stars,
-  MeshDistortMaterial,
-} from "@react-three/drei";
+import { OrbitControls, Stars, MeshDistortMaterial } from "@react-three/drei";
 function Box() {
   return (
     <mesh position={[6, -2.5, -10]}>
@@ -169,7 +165,6 @@ function Box___() {
   );
 }
 
-
 const degreesToRadians = (degrees) => {
   return degrees * (Math.PI / 180);
 };
@@ -197,10 +192,6 @@ export default function Test() {
         <Box___ />
         <Circle />
       </Canvas>
-      <Canvas>
-        <Box_0/>
-      </Canvas>
-
     </div>
   );
 }
