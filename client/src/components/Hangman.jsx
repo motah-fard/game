@@ -17,14 +17,14 @@ import Test7 from "../screens/Test7";
 const Hangman = (props) => {
   const [words, setWords] = useState([]);
   const [toggle, setToggle] = useState(false);
-  const [randomWord, setRandomWord] = useState("");
+  // const [randomWord, setRandomWord] = useState("");
   const [guessedLetters, setGuessedLetters] = useState([]);
   const [wrong, setWrong] = useState(0);
+  const [myWord, setMyWord] = useState([]);
   const history = useHistory();
-  const [win, setWin]=useState(false);
+  const [game,setGame]=useState([])
 
-
-
+ 
   const steps = [
     <Test1 />,
     <Test2 />,
@@ -43,15 +43,17 @@ const Hangman = (props) => {
 
   useEffect(() => {
     if (words.length !== 0) {
-      const text = words[Math.floor(Math.random() * words.length)].text;
-      setRandomWord(text.toUpperCase());
+      const text = words[Math.floor(Math.random() * words.length)];
+      setMyWord(text);
+      console.log(text);
+      props.setRandomWord(text.text.toUpperCase());
     }
   }, [words]);
   useEffect(() => {
     //if every letter of the randomWord is inside of guessed letters
     if (
-      randomWord &&
-      randomWord.split("").every((letter) => guessedLetters.includes(letter))
+      props.randomWord &&
+      props.randomWord.split("").every((letter) => guessedLetters.includes(letter))
     ) {
       console.log("You WON");
       history.push("/home"); // make a jsx file for Won page
@@ -73,31 +75,25 @@ const Hangman = (props) => {
       return <button onClick={() => handelGuess(letter)}>{letter}</button>;
     });
   }
-
-  // creating game to add to the data base
-// const craeteGame = async (e) => {
-//   e.preventDefault();
-//   const newGame = {
-//     win,
-//     randomWord,
-//     user
-//   }
-//   await addGame(newGame);
-
-// }
+// making the game
+const handleClick = async (wordId) => {
+  const game = await addGame(wordId);
+  setGame(game)
+  console.log(game)
+}
   function handelGuess(letter) {
     // if this letter has not been guessed before
     if (!guessedLetters.includes(letter)) {
       setGuessedLetters([...guessedLetters, letter]);
       //if letter is not in the randomword
-      if (!randomWord.includes(letter)) {
+      if (!props.randomWord.includes(letter)) {
         setWrong(wrong + 1);
         // return wrong;
         console.log(wrong);
       }
     }
   }
-  const output = randomWord.toUpperCase().split("");
+  const output = props.randomWord.toUpperCase().split("");
   const guess = output.map((letter) =>
     guessedLetters.includes(letter) ? letter : "-"
   );
@@ -108,7 +104,8 @@ const Hangman = (props) => {
       
       <div className="hangman">{steps[wrong]}</div>
       <div>{getButtons()}</div>
-      {randomWord}
+      {props.randomWord}
+      <button onClick={() => handleClick(myWord.id)}>make the game</button>
     </div>
   );
 };

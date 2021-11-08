@@ -4,7 +4,7 @@ from word import Word
 from user import User
 
 class Game(Model):
-    win_lose = BooleanField()
+    win_lose = BooleanField(default=False)
     word = ForeignKeyField(Word, backref='games')
     user = ForeignKeyField(User, backref='games')
     class Meta:

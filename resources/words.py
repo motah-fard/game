@@ -24,9 +24,10 @@ def create_game(word_id):
         body = request.get_json()
         #get the word
         word = Word.get_by_id(word_id)
-        if Game.get_or_none(Game.user == current_user.id, Game.word == word_id) != None:
-            return jsonify(message="game already exist😅")
-        Game.create(**body, user=current_user, word=word)
+        # to make bunch of games with one word we have to comment these two line
+        # if Game.get_or_none(Game.user == current_user.id, Game.word == word_id) != None:
+        #     return jsonify(message="game already exist😅")
+        Game.create( user=current_user, word=word)
         user = User.get_by_id(current_user.id)
         user_dict = model_to_dict(user, backrefs=True)
         del user_dict['password']
@@ -73,4 +74,18 @@ def update_word(id):
         return jsonify(error=f"Word with id {id} not found."), 404
     except AttributeError as err:
         return jsonify(error=str(err)), 400
+
+# @word.route('/<int:id>', methods=['PUT'])
+# def update_word(id):
+#     try:
+#         body = request.get_json()
+#         (Word
+#             .update(**body)
+#             .where(Word.id==id)
+#             .execute())
+#         return jsonify(model_to_dict(Word.get_by_id(id))), 200
+#     except DoesNotExist:
+#         return jsonify(error=f"Word with id {id} not found."), 404
+#     except AttributeError as err:
+#         return jsonify(error=str(err)), 400
 

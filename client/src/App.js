@@ -12,6 +12,7 @@ import Hangman from "./components/Hangman";
 
 function App() {
   const [user, setUser] = useState(null);
+  const [randomWord, setRandomWord] = useState('')
 
   return (
     <div className="App">
@@ -19,7 +20,7 @@ function App() {
       <Switch>
         <main>
           <Route exact path="/">
-            <Home />
+            <Home user={user} setUser={setUser} randomWord={randomWord} setrandomWord={setRandomWord}/>
           </Route>
           <Route path="/login">
             <Login setUser={setUser} />
@@ -34,7 +35,7 @@ function App() {
             <AddWord />
           </Route>
           <Route path="/hangman">
-            <Hangman user={user} setUser={setUser} />
+            <Hangman user={user} setUser={setUser} randomWord={randomWord} setRandomWord={setRandomWord} />
           </Route>
           <Route path="/edit-word/:id">
             <AddWord />
