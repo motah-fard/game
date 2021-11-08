@@ -4,6 +4,7 @@ import {GoHome} from 'react-icons/go'
 import {RiLogoutCircleRLine, RiLoginCircleLine} from 'react-icons/ri'
 import {GiArchiveRegister} from 'react-icons/gi'
 import { useHistory } from "react-router-dom";
+import './Nav.css'
 const Nav = (props) => {
   const history = useHistory();
   const handleClick = async () => {
@@ -13,14 +14,16 @@ const Nav = (props) => {
   };
 
   return (
-    <nav>
+    <nav className="navbar">
       {props.user ? (
         <>
           <h3> Hello {props.user.username}</h3>
+          <div>
           <Link to="/">
             <GoHome className="edit-icon" size="55px"/>
           </Link>
           <RiLogoutCircleRLine onClick={handleClick} className="edit-icon" size="55px"/>
+          </div>
         </>
       ) : (
         <>

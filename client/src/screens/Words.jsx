@@ -15,6 +15,7 @@ const Words = (props) => {
 
   return (
     <div className='word'>
+      <h4>List of Words</h4>
       {words.map((word) => (
         <WordEditDelete setToggleFetch={setToggleFetch} key={word.id} word={word}/>
       ))}

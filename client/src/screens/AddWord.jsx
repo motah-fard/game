@@ -41,7 +41,7 @@ const AddWord = () => {
           onChange={(e) => setText(e.target.value)}
           required
         />
-        {params.id ? (<AiOutlineEdit className="edit-icon" size="55px"/>) : (<MdOutlineCreate className="edit-icon" size="55px"/>)}
+        {params.id ? (<AiOutlineEdit className="edit-icon" size="35px"/>) : (<MdOutlineCreate className="edit-icon" size="35px"/>)}
         
       </form>
     </div>
