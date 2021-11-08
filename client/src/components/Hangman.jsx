@@ -20,7 +20,7 @@ const Hangman = (props) => {
   // const [randomWord, setRandomWord] = useState("");
   const [guessedLetters, setGuessedLetters] = useState([]);
   const [wrong, setWrong] = useState(0);
-  const [myWord, setMyWord] = useState([]);
+
   const history = useHistory();
   const [game,setGame]=useState([])
 
@@ -44,8 +44,8 @@ const Hangman = (props) => {
   useEffect(() => {
     if (words.length !== 0) {
       const text = words[Math.floor(Math.random() * words.length)];
-      setMyWord(text);
-      console.log(text);
+      props.setMyWord(text);
+      // console.log(text);
       props.setRandomWord(text.text.toUpperCase());
     }
   }, [words]);
@@ -75,12 +75,7 @@ const Hangman = (props) => {
       return <button onClick={() => handelGuess(letter)}>{letter}</button>;
     });
   }
-// making the game
-const handleClick = async (wordId) => {
-  const game = await addGame(wordId);
-  setGame(game)
-  console.log(game)
-}
+
   function handelGuess(letter) {
     // if this letter has not been guessed before
     if (!guessedLetters.includes(letter)) {
@@ -89,7 +84,7 @@ const handleClick = async (wordId) => {
       if (!props.randomWord.includes(letter)) {
         setWrong(wrong + 1);
         // return wrong;
-        console.log(wrong);
+        // console.log(wrong);
       }
     }
   }
@@ -105,7 +100,6 @@ const handleClick = async (wordId) => {
       <div className="hangman">{steps[wrong]}</div>
       <div>{getButtons()}</div>
       {props.randomWord}
-      <button onClick={() => handleClick(myWord.id)}>make the game</button>
     </div>
   );
 };

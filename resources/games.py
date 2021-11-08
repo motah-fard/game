@@ -8,14 +8,15 @@ from word import Word
 
 
 game = Blueprint('games', __name__, url_prefix='/games/game')
-@word.route('/')
+@game.route('/')
 @login_required
 
-@word.route('/game/<int:id>', methods=['PUT'])
+
+@game.route('/game/<int:id>', methods=['PUT'])
 def update_game(id):
     try:
         body = request.get_json()
-        (Word
+        (Game
             .update(**body)
             .where(Game.id==id)
             .execute())

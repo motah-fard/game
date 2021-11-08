@@ -1,20 +1,21 @@
 import LandingPage from "./LandingPage";
 import React from "react";
 import Test from "./Test";
+import { useState } from "react";
 import { Link } from "react-router-dom";
+import { addGame } from "../services";
 const Home = (props) => {
-// creating game to add to the data base
-// making the game
-// const handleClick = async (wordId) => {
-//   const user = await addGame(wordId);
-//   // props.setUser(user);
-//   // console.log(props.user.username);
-// }
+  const [game,setGame]=useState([]);
+const handleClick = async (wordId) => {
+  const game = await addGame(wordId);
+  setGame(game)
+  console.log(game)
+}
   return (
     <section>
       <Test/>
       <Link to="/hangman">
-        {/* <button onClick={() => handleClick(p.id)}>make the game</button> */}
+        <button onClick={() => handleClick(props.myWord.id)}>make the game</button>
       </Link>
       <Link to="/new/word">
         <button> Adding a Word</button>
