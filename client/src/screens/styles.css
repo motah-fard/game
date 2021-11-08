@@ -1,5 +1,6 @@
 * {
     box-sizing: border-box;
+    font-family: 'Itim', cursive;
   }
   
   html,
@@ -21,6 +22,5 @@
   }
   
   body {
-    font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, helvetica neue, helvetica, ubuntu, roboto, noto,
-      segoe ui, arial, sans-serif;
+    font-family: 'Itim', cursive;
   }

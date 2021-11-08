@@ -3,10 +3,13 @@ import { logout } from "../services";
 import {GoHome} from 'react-icons/go' 
 import {RiLogoutCircleRLine, RiLoginCircleLine} from 'react-icons/ri'
 import {GiArchiveRegister} from 'react-icons/gi'
+import { useHistory } from "react-router-dom";
 const Nav = (props) => {
+  const history = useHistory();
   const handleClick = async () => {
     await logout();
     props.setUser(null);
+    history.push('/')
   };
 
   return (

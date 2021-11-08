@@ -11,6 +11,7 @@ import Hangman from "./components/Hangman";
 import Games from "./screens/Games";
 import Lose from "./screens/Lose";
 import Win from "./screens/Win";
+import './index.css'
 
 function App() {
   const [user, setUser] = useState(null);
