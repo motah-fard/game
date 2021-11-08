@@ -20,7 +20,7 @@ const Home = (props) => {
       <div >
         {props.user ? (
           <>
-            <div className="add-container">
+            <div >
               <Link to="/hangman">
                 <FaGamepad
                   onClick={() => handleClick(id)}
