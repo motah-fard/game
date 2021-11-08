@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import { useHistory, useParams } from "react-router-dom";
 import { createWord, updateWord, getWordsById } from "../services";
-
+import {AiOutlineEdit} from 'react-icons/ai'
+import {MdOutlineCreate} from 'react-icons/md'
 import React from "react";
 //add or edit word
 const AddWord = () => {
@@ -29,7 +30,7 @@ const AddWord = () => {
   };
 
   return (
-    <div>
+    <div className='word'>
       {params.id ? (<h4>Edit Word</h4>) : (<h4>Add a new Word</h4>)}
       <form onSubmit={handleSubmit}>
         <label htmlFor="text">Word:</label>
@@ -40,7 +41,7 @@ const AddWord = () => {
           onChange={(e) => setText(e.target.value)}
           required
         />
-        {params.id ? (<button type="submit">Edit Word</button>) : (<button type="submit">Create Word</button>)}
+        {params.id ? (<AiOutlineEdit className="edit-icon" size="55px"/>) : (<MdOutlineCreate className="edit-icon" size="55px"/>)}
         
       </form>
     </div>

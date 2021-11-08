@@ -1,0 +1,32 @@
+
+.word {
+    font-family: 'Itim', cursive;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 400px;
+    /* min-height: 600px; */
+  
+    /* background: #e8e8e4; */
+    text-align: center;
+    margin: 0px auto;
+    border-radius: 5px;
+    padding-top: 40px;
+  }
+  .word-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 4px auto;
+    padding: 16px;
+    /* border-radius: 5px; */
+    border: 1px solid #e5e5e5;
+    width: 90%;
+    font-size:15px ;
+  } 
+  .icons {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    cursor: pointer;
+  }

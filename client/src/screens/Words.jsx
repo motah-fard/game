@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { getAllWords } from "../services";
 import React from "react";
 import WordEditDelete from "./WordEditDelete";
+import './Word.css'
 
 const Words = (props) => {
   const [words, setWords] = useState([]);
@@ -13,7 +14,7 @@ const Words = (props) => {
 
 
   return (
-    <div>
+    <div className='word'>
       {words.map((word) => (
         <WordEditDelete setToggleFetch={setToggleFetch} key={word.id} word={word}/>
       ))}
