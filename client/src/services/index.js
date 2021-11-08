@@ -93,7 +93,7 @@ export const updateWord = async (id, word) => {
 // get all the games
 export const getAllGames = async () => {
   try {
-    const response = await axios.get(`${apiURL}/words/games/`);
+    const response = await axios.get(`${apiURL}/words/games`);
     return response.data;
   } catch (error) {
     console.error(error.message);
