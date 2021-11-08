@@ -4,6 +4,7 @@ import { createWord, updateWord, getWordsById } from "../services";
 import {AiOutlineEdit} from 'react-icons/ai'
 import {MdOutlineCreate} from 'react-icons/md'
 import React from "react";
+import './AddWord.css'
 //add or edit word
 const AddWord = () => {
   const [text, setText] = useState("");
@@ -30,9 +31,10 @@ const AddWord = () => {
   };
 
   return (
-    <div className='word'>
+    <div >
       {params.id ? (<h4>Edit Word</h4>) : (<h4>Add a new Word</h4>)}
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="add-container">
+        <div>
         <label htmlFor="text">Word:</label>
         <input
           id="text"
@@ -42,7 +44,7 @@ const AddWord = () => {
           required
         />
         {params.id ? (<AiOutlineEdit className="edit-icon" size="35px"/>) : (<MdOutlineCreate className="edit-icon" size="35px"/>)}
-        
+        </div>
       </form>
     </div>
   );
