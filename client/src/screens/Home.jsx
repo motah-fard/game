@@ -17,7 +17,7 @@ const Home = (props) => {
   const { id } = props.myWord;
   return (
     <section className="hangman">
-      <div className="hangman">
+      <div className="add-container">
         {props.user ? (
           <>
             <div>
