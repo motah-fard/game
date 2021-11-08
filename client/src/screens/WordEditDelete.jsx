@@ -20,9 +20,9 @@ const WordEditDelete = (props) => {
     return (
         <div>
             <h5>{text.text}</h5>
-            <RiCloseCircleLine className='delete-icon' onClick={handelDelete}/>
+            <RiCloseCircleLine className='delete-icon' onClick={handelDelete} size="35px"/>
             <Link to={`/edit-word/${ID}`}>
-                <TiEdit className='edit-icon'/>
+                <TiEdit className='edit-icon' size="35px"/>
             </Link>
         </div>
     );

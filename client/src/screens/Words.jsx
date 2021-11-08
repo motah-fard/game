@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
-import { getAllWords, getWordsById } from "../services";
+import { getAllWords } from "../services";
 import React from "react";
 import WordEditDelete from "./WordEditDelete";
 
 const Words = (props) => {
   const [words, setWords] = useState([]);
-  const id = words.id;
+  
   const [ toggleFetch, setToggleFetch ] = useState(false)
   useEffect(() => {
     getAllWords().then((fetchWords) => setWords(fetchWords));

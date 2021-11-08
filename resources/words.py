@@ -75,6 +75,10 @@ def update_word(id):
     except AttributeError as err:
         return jsonify(error=str(err)), 400
 
+
+
+
+
 # get the game by id
 @word.route('/game/<int:id>', methods=["GET"])
 def get_game_by_id(id):
@@ -97,7 +101,7 @@ def delete_game(id):
         return jsonify(message="error getting game."), 500
 
 # update the game
-@word.route('/<int:id>', methods=['PUT'])
+@word.route('game/<int:id>', methods=['PUT'])
 def update_game(id):
     try:
         body = request.get_json()

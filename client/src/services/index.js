@@ -53,7 +53,7 @@ export const createWord = async (newWord) => {
     console.error(error.message);
   }
 }
-// adding the game I havent used it yet (hangman.jsx)
+// adding the game 
 export const addGame = async (wordId) => {
   try {
     const response = await axios.post(`${apiURL}/words/games/${wordId}`);
@@ -71,7 +71,7 @@ export const getWordsById = async (id)=> {
     console.log(error.message)
   }
 }
-// delete the word 
+// delete the word do not have any use in the game
 export const deleteWord = async(id)=>{
   try {
     const response =await axios.delete(`${apiURL}/words/${id}`);
@@ -84,6 +84,51 @@ export const deleteWord = async(id)=>{
 export const updateWord = async (id, word) => {
   try {
       const response = await axios.put(`${apiURL}/words/${id}`, word);
+      return response.data;
+    } catch (error) {
+    console.error(error.message);
+  }
+}
+
+
+// get all the games
+export const getAllGames = async () => {
+  try {
+    const response = await axios.get(`${apiURL}/words/games`);
+    return response.data;
+  } catch (error) {
+    console.error(error.message);
+  }
+}
+
+
+// get games by id
+export const getGameById = async (id)=> {
+  try {
+    const response =await axios.get(`${apiURL}/words/game/${id}`);
+    return response.data;
+  } catch (error) {
+    console.log(error.message)
+  }
+}
+
+// delete the game
+
+export const deleteGame = async(id)=>{
+  try {
+    const response =await axios.delete(`${apiURL}/words/game/${id}`);
+    return response.data;
+  } catch (error) {
+    console.log(error.message)
+  }
+}
+
+
+// edit game
+
+export const updateGame = async (id, word) => {
+  try {
+      const response = await axios.put(`${apiURL}/words/game/${id}`, word);
       return response.data;
     } catch (error) {
     console.error(error.message);

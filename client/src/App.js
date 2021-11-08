@@ -7,8 +7,8 @@ import Login from "./screens/Login";
 import Register from "./screens/Register";
 import AddWord from "./screens/AddWord";
 import Words from "./screens/Words";
-import Test from "./screens/Test";
 import Hangman from "./components/Hangman";
+import Games from "./screens/Games";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -37,6 +37,9 @@ function App() {
           </Route>
           <Route path="/hangman">
             <Hangman user={user} setUser={setUser} randomWord={randomWord} setRandomWord={setRandomWord} myWord={myWord} setMyWord={setMyWord} />
+          </Route>
+          <Route path="/games">
+            <Games user={user} setUser={setUser} randomWord={randomWord} setRandomWord={setRandomWord} myWord={myWord} setMyWord={setMyWord} />
           </Route>
           <Route path="/edit-word/:id">
             <AddWord />

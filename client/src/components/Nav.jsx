@@ -12,6 +12,7 @@ const Nav = (props) => {
       <Link to="/">Home</Link>
       {props.user ? (
         <>
+          <Link to="/games">games</Link>
           <Link to="/hangman">Hangman</Link>
           <Link to="/words">Words</Link>
           <Link to="/new/word">Add a new word to the list!</Link>
