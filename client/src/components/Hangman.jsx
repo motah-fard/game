@@ -98,11 +98,17 @@ const Hangman = (props) => {
     guessedLetters.includes(letter) ? letter : "-"
   );
   return (
-    <div className='hangman'>
-      <div><h3 >Wrong Guesses: {wrong} out of {6}</h3></div>
-      <div><h1 >{guess}</h1></div>
+    <div className="hangman">
+      <div>
+        <h3>
+          Wrong Guesses: {wrong} out of {6}
+        </h3>
+      </div>
+      <div>
+        <h1>{guess}</h1>
+      </div>
       <div>{steps[wrong]}</div>
-      <div >{getButtons()}</div>
+      <div>{getButtons()}</div>
     </div>
   );
 };
