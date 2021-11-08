@@ -17,10 +17,10 @@ const Home = (props) => {
   const { id } = props.myWord;
   return (
     <section className="hangman">
-      <div className="add-container">
+      <div >
         {props.user ? (
           <>
-            <div>
+            <div className="add-container">
               <Link to="/hangman">
                 <FaGamepad
                   onClick={() => handleClick(id)}
