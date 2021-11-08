@@ -11,7 +11,10 @@ const Nav = (props) => {
     <nav>
       {props.user ? (
         <>
-        <h3> hello {props.user.username}</h3>
+          <h3> Hello {props.user.username}</h3>
+          <Link to="/">
+            <button>Home</button>
+          </Link>
           <button onClick={handleClick}>Log out!</button>
         </>
       ) : (

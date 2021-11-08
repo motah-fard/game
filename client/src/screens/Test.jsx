@@ -87,7 +87,7 @@ function Box_5() {
 function Circle() {
   return (
     <mesh position={[6, 0, -10]}>
-      <octahedronBufferGeometry attach="geometry" args={[1, 1]} />
+      <sphereBufferGeometry attach="geometry" args={[0.98, 0.98]} />
       <MeshDistortMaterial
         attach="material"
         transparent

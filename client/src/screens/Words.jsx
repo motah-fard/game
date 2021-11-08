@@ -14,7 +14,6 @@ const Words = (props) => {
 
   return (
     <div>
-      <h1>Hello {props.user.username}!</h1>
       {words.map((word) => (
         <WordEditDelete setToggleFetch={setToggleFetch} key={word.id} word={word}/>
       ))}

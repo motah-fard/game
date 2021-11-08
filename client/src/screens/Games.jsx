@@ -13,7 +13,6 @@ const Games = (props) => {
   }, [toggleFetch]);
   return (
     <div>
-      <h1>Hello {props.user.username}!</h1>
       {props.games.map((game) => (
         <AllGames setToggleFetch={setToggleFetch} key={game.id} game={game} />
       ))}

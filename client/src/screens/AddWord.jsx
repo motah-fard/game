@@ -30,6 +30,7 @@ const AddWord = () => {
 
   return (
     <div>
+      {params.id ? (<h4>Edit Word</h4>) : (<h4>Add a new Word</h4>)}
       <form onSubmit={handleSubmit}>
         <label htmlFor="text">Word:</label>
         <input

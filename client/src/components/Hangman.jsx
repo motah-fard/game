@@ -99,7 +99,6 @@ const Hangman = (props) => {
   );
   return (
     <div>
-      <h3>Hello {props.user.username}!</h3>
       <h1>{guess}</h1>
 
       <div className="hangman">{steps[wrong]}</div>
