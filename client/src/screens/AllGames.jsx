@@ -10,14 +10,20 @@ const AllGames = (props) => {
     props.setToggleFetch((curr) => !curr);
   };
   return (
-    <div>
-      <h5>{props.game.word.text}</h5>
+    <div className='icons'>
+      <div className="word-row">
+      <h5 >{props.game.word.text}</h5>
+      <div>
       <h6>{props.game.win_lose.toString()}</h6>
+      
+
       <RiCloseCircleLine
         className="delete-icon"
         onClick={handelDelete}
         size="35px"
       />
+      </div>
+      </div>
     </div>
   );
 };
