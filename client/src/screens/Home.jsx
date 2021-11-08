@@ -15,18 +15,24 @@ const Home = (props) => {
   return (
     <section>
       <Test />
-      <Link to="/hangman">
-        <button onClick={() => handleClick(id)}>Start a New Game</button>
-      </Link>
-      <Link to="/new/word">
-        <button> Creating a Word</button>
-      </Link>
-      <Link to='/words'>
-        <button>List of the Words</button>
-      </Link>
-      <Link to='/games'>
-        <button>List of the Games</button>
-      </Link>
+      {props.user ? (
+        <>
+          <Link to="/hangman">
+            <button onClick={() => handleClick(id)}>Start a New Game</button>
+          </Link>
+          <Link to="/new/word">
+            <button> Creating a Word</button>
+          </Link>
+          <Link to="/words">
+            <button>List of the Words</button>
+          </Link>
+          <Link to="/games">
+            <button>List of the Games</button>
+          </Link>
+        </>
+      ) : (
+        <></>
+      )}
     </section>
   );
 };
