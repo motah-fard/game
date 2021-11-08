@@ -1,7 +1,8 @@
 import "./Hangman.css";
 import React from "react";
 import { useEffect, useState } from "react";
-import { getAllWords } from "../services";
+import { useHistory, useParams } from "react-router-dom";
+import { getAllWords, addGame } from "../services";
 import Test from "../screens/Test";
 import Test1 from "../screens/Test1";
 import Test2 from "../screens/Test2";
@@ -10,7 +11,8 @@ import Test4 from "../screens/Test4";
 import Test5 from "../screens/Test5";
 import Test6 from "../screens/Test6";
 import Test7 from "../screens/Test7";
-import { useHistory } from "react-router-dom";
+
+
 
 const Hangman = (props) => {
   const [words, setWords] = useState([]);
@@ -19,7 +21,10 @@ const Hangman = (props) => {
   const [guessedLetters, setGuessedLetters] = useState([]);
   const [wrong, setWrong] = useState(0);
   const history = useHistory();
-  //getting a random word from database'
+  const [win, setWin]=useState(false);
+
+
+
   const steps = [
     <Test1 />,
     <Test2 />,
@@ -30,6 +35,8 @@ const Hangman = (props) => {
     <Test7 />,
     <Test />,
   ];
+  
+  //getting a random word from database'
   useEffect(() => {
     getAllWords().then((fetchWords) => setWords(fetchWords));
   }, [toggle]);
@@ -66,6 +73,18 @@ const Hangman = (props) => {
       return <button onClick={() => handelGuess(letter)}>{letter}</button>;
     });
   }
+
+  // creating game to add to the data base
+// const craeteGame = async (e) => {
+//   e.preventDefault();
+//   const newGame = {
+//     win,
+//     randomWord,
+//     user
+//   }
+//   await addGame(newGame);
+
+// }
   function handelGuess(letter) {
     // if this letter has not been guessed before
     if (!guessedLetters.includes(letter)) {
@@ -84,7 +103,9 @@ const Hangman = (props) => {
   );
   return (
     <div>
-      {guess}
+      <h3>Hello {props.user.username}!</h3>
+      <h1>{guess}</h1>
+      
       <div className="hangman">{steps[wrong]}</div>
       <div>{getButtons()}</div>
       {randomWord}

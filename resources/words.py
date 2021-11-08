@@ -51,11 +51,14 @@ def add_word():
 
 @word.route('/<int:id>', methods=['DELETE'])
 def delete_word(id):
-    (Word
-     .delete()
-     .where(Word.id == id)
-     .execute())
-    return jsonify(message=f"Word with id {id} deleted"), 200
+    try:
+        (Word
+            .delete()
+            .where(Word.id == id)
+            .execute())
+        return jsonify(message=f"Word with id {id} deleted"), 200
+    except DoesNotExist:
+        return jsonify(message="error getting comment."), 500
 
 @word.route('/<int:id>', methods=['PUT'])
 def update_word(id):
