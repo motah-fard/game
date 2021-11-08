@@ -4,6 +4,8 @@ import Test from "./Test";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { addGame } from "../services";
+import {FaGamepad, FaThList, FaAngellist} from 'react-icons/fa'
+import {BsFillFileWordFill} from 'react-icons/bs'
 const Home = (props) => {
   const [game, setGame] = useState([]);
   const handleClick = async (wordId) => {
@@ -18,16 +20,16 @@ const Home = (props) => {
       {props.user ? (
         <>
           <Link to="/hangman">
-            <button onClick={() => handleClick(id)}>Start a New Game</button>
-          </Link>
-          <Link to="/new/word">
-            <button> Creating a Word</button>
-          </Link>
-          <Link to="/words">
-            <button>List of the Words</button>
+            <FaGamepad onClick={() => handleClick(id)} className="edit-icon" size="55px"/>
           </Link>
           <Link to="/games">
-            <button>List of the Games</button>
+            <FaAngellist className="edit-icon" size="55px"/>
+          </Link>
+          <Link to="/new/word">
+            <BsFillFileWordFill className="edit-icon" size="55px"/>
+          </Link>
+          <Link to="/words">
+            <FaThList className="edit-icon" size="55px"/>
           </Link>
         </>
       ) : (

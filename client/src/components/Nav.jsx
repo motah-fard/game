@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import { logout } from "../services";
-
+import {GoHome} from 'react-icons/go' 
+import {RiLogoutCircleRLine, RiLoginCircleLine} from 'react-icons/ri'
+import {GiArchiveRegister} from 'react-icons/gi'
 const Nav = (props) => {
   const handleClick = async () => {
     await logout();
@@ -13,14 +15,18 @@ const Nav = (props) => {
         <>
           <h3> Hello {props.user.username}</h3>
           <Link to="/">
-            <button>Home</button>
+            <GoHome className="edit-icon" size="55px"/>
           </Link>
-          <button onClick={handleClick}>Log out!</button>
+          <RiLogoutCircleRLine onClick={handleClick} className="edit-icon" size="55px"/>
         </>
       ) : (
         <>
-          <Link to="/login">Login</Link>
-          <Link to="/register">Register</Link>
+          <Link to="/login">
+            <RiLoginCircleLine className="edit-icon" size="55px"/>
+          </Link>
+          <Link to="/register">
+            <GiArchiveRegister className="edit-icon" size="55px"/>
+          </Link>
         </>
       )}
     </nav>

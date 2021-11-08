@@ -1,8 +1,5 @@
-import { RiCloseCircleLine } from "react-icons/ri";
 import { TiEdit } from "react-icons/ti";
 import React from "react";
-import { deleteWord, getWordsById } from "../services/index";
-import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 const WordEditDelete = (props) => {
