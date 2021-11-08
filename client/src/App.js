@@ -14,6 +14,7 @@ function App() {
   const [user, setUser] = useState(null);
   const [randomWord, setRandomWord] = useState('')
   const [myWord, setMyWord] = useState([]);
+  
 
   return (
     <div className="App">
