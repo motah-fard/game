@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { register } from "../services";
 import { useHistory } from "react-router-dom";
+import './Register.css'
 
 const Register = (props) => {
   const [username, setUsername] = useState("");
@@ -22,7 +23,7 @@ const Register = (props) => {
   };
 
   return (
-    <section>
+    <section className="add-container">
       <h3>Register</h3>
       <form onSubmit={handleSubmit}>
         <label htmlFor="name">Name:</label>
