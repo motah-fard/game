@@ -5,7 +5,7 @@ import AllGames from "./AllGames";
 import "./Game.css";
 
 const Games = (props) => {
-  // const [games, setGames] = useState([]);
+  const [games, setGames] = useState([]);
   const { id } = props.games;
   const [toggleFetch, setToggleFetch] = useState(false);
   useEffect(() => {
