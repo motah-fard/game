@@ -40,7 +40,8 @@ const AddWord = () => {
           onChange={(e) => setText(e.target.value)}
           required
         />
-        <button type="submit">Create Word</button>
+        {params.id ? (<button type="submit">Edit Word</button>) : (<button type="submit">Create Word</button>)}
+        
       </form>
     </div>
   );
