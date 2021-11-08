@@ -9,12 +9,13 @@ const Games = (props) => {
     const [ toggleFetch, setToggleFetch ] = useState(false)
     useEffect(() => {
         getAllGames().then((fetchGame) => setGames(fetchGame));
-      }, []);
+        console.log(games);
+      }, [toggleFetch]);
     return (
         <div>
             <h1>Hello {props.user.username}!</h1>
             {games.map((game) => (
-                <AllGames setToggleFetch={setToggleFetch} key={game.id} games={game}/>
+                <AllGames setToggleFetch={setToggleFetch} key={game.id} game={game}/>
             ))}
         </div>
     );

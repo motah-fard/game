@@ -1,20 +1,26 @@
 import { useEffect, useState } from "react";
 import { deleteGame, getAllGames } from "../services";
 import React from "react";
-import Games from "./Games";
-
+import { RiCloseCircleLine } from 'react-icons/ri';
 
 const AllGames = (props) => {
-    // const [ game,setGame ]= useState([])
-    // const ID = props.game.id;
-    // useEffect(() => {
-    //     getAllGames(ID).then((game) => setGame(game))
-    // }, [ID]);
-    return (
-        <div>
-            hello
-        </div>
-    );
+ 
+  const ID = props.game.id;
+
+  const handelDelete = async () => {
+    await deleteGame(ID);
+    props.setToggleFetch((curr) => !curr);
+  };
+  return (
+    <div>
+      {/* <h5>{game.word.text}</h5> */}
+      <RiCloseCircleLine
+        className="delete-icon"
+        onClick={handelDelete}
+        size="35px"
+      />
+    </div>
+  );
 };
 
 export default AllGames;

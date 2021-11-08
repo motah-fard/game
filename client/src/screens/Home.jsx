@@ -5,17 +5,20 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { addGame } from "../services";
 const Home = (props) => {
-  const [game,setGame]=useState([]);
-const handleClick = async (wordId) => {
-  const game = await addGame(wordId);
-  setGame(game)
-  console.log(game)
-}
+  const [game, setGame] = useState([]);
+  const handleClick = async (wordId) => {
+    const game = await addGame(wordId);
+    setGame(game);
+    console.log(game);
+  };
+  const {id} = props.myWord;
   return (
     <section>
-      <Test/>
+      <Test />
       <Link to="/hangman">
-        <button onClick={() => handleClick(props.myWord.id)}>make the game</button>
+        <button onClick={() => handleClick(id)}>
+          make the game
+        </button>
       </Link>
       <Link to="/new/word">
         <button> Adding a Word</button>

@@ -1,8 +1,8 @@
 import "./Hangman.css";
 import React from "react";
 import { useEffect, useState } from "react";
-import { useHistory, useParams } from "react-router-dom";
-import { getAllWords, addGame } from "../services";
+import { useHistory } from "react-router-dom";
+import { getAllWords, updateGame } from "../services";
 import Test from "../screens/Test";
 import Test1 from "../screens/Test1";
 import Test2 from "../screens/Test2";
@@ -20,7 +20,7 @@ const Hangman = (props) => {
   // const [randomWord, setRandomWord] = useState("");
   const [guessedLetters, setGuessedLetters] = useState([]);
   const [wrong, setWrong] = useState(0);
-
+  const [win, setWin]= useState(false);
   const history = useHistory();
   const [game,setGame]=useState([])
 
@@ -45,7 +45,7 @@ const Hangman = (props) => {
     if (words.length !== 0) {
       const text = words[Math.floor(Math.random() * words.length)];
       props.setMyWord(text);
-      // console.log(text);
+      console.log(text);
       props.setRandomWord(text.text.toUpperCase());
     }
   }, [words]);
@@ -55,6 +55,12 @@ const Hangman = (props) => {
       props.randomWord &&
       props.randomWord.split("").every((letter) => guessedLetters.includes(letter))
     ) {
+      setWin(true)
+      // const update = async ()=>{
+      //   await updateGame(game.id,win)
+      // }
+      // update();
+      
       console.log("You WON");
       history.push("/home"); // make a jsx file for Won page
     }

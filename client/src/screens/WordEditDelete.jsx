@@ -6,12 +6,7 @@ import { useEffect, useState } from "react";
 import {Link} from "react-router-dom"
 
 const WordEditDelete = (props) => {
-    const [ text,setText ]= useState('')
     const ID = props.word.id;
-    useEffect(() => {
-        getWordsById(ID).then((text) => setText(text))
-        console.log(text)
-    }, [ID]);
 
     const handelDelete = async () => {
         await deleteWord(ID)
@@ -19,7 +14,7 @@ const WordEditDelete = (props) => {
     }
     return (
         <div>
-            <h5>{text.text}</h5>
+            <h5>{props.word.text}</h5>
             <RiCloseCircleLine className='delete-icon' onClick={handelDelete} size="35px"/>
             <Link to={`/edit-word/${ID}`}>
                 <TiEdit className='edit-icon' size="35px"/>

@@ -126,9 +126,9 @@ export const deleteGame = async(id)=>{
 
 // edit game
 
-export const updateGame = async (id, word) => {
+export const updateGame = async (id, win) => {
   try {
-      const response = await axios.put(`${apiURL}/words/game/${id}`, word);
+      const response = await axios.put(`${apiURL}/words/game/${id}`, win);
       return response.data;
     } catch (error) {
     console.error(error.message);
