@@ -12,7 +12,7 @@ const Games = (props) => {
     // console.log(id);//not sur ewhy this is undefined!!!// ask tomorrow
   }, [toggleFetch]);
   return (
-    <div>
+    <div className='game'>
       {props.games.map((game) => (
         <AllGames setToggleFetch={setToggleFetch} key={game.id} game={game} />
       ))}
