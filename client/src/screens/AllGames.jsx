@@ -13,7 +13,8 @@ const AllGames = (props) => {
   };
   return (
     <div>
-      {/* <h5>{game.word.text}</h5> */}
+      <h5>{props.game.word.text}</h5>
+      <h6>{props.game.win_lose.toString()}</h6>
       <RiCloseCircleLine
         className="delete-icon"
         onClick={handelDelete}
