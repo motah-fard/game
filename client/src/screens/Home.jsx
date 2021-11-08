@@ -11,14 +11,12 @@ const Home = (props) => {
     setGame(game);
     console.log(game);
   };
-  const {id} = props.myWord;
+  const { id } = props.myWord;
   return (
     <section>
       <Test />
       <Link to="/hangman">
-        <button onClick={() => handleClick(id)}>
-          make the game
-        </button>
+        <button onClick={() => handleClick(id)}>make the game</button>
       </Link>
       <Link to="/new/word">
         <button> Adding a Word</button>

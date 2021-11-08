@@ -12,19 +12,15 @@ import Test5 from "../screens/Test5";
 import Test6 from "../screens/Test6";
 import Test7 from "../screens/Test7";
 
-
-
 const Hangman = (props) => {
   const [words, setWords] = useState([]);
   const [toggle, setToggle] = useState(false);
-  // const [randomWord, setRandomWord] = useState("");
   const [guessedLetters, setGuessedLetters] = useState([]);
   const [wrong, setWrong] = useState(0);
-  const [win, setWin]= useState(false);
+  const [win, setWin] = useState(false);
   const history = useHistory();
-  const [game,setGame]=useState([])
+  // const {id} = props.games.id;
 
- 
   const steps = [
     <Test1 />,
     <Test2 />,
@@ -35,17 +31,18 @@ const Hangman = (props) => {
     <Test7 />,
     <Test />,
   ];
-  
+
   //getting a random word from database'
   useEffect(() => {
     getAllWords().then((fetchWords) => setWords(fetchWords));
+    console.log(props.games);
   }, [toggle]);
 
   useEffect(() => {
     if (words.length !== 0) {
       const text = words[Math.floor(Math.random() * words.length)];
       props.setMyWord(text);
-      console.log(text);
+      // console.log(text);
       props.setRandomWord(text.text.toUpperCase());
     }
   }, [words]);
@@ -53,14 +50,16 @@ const Hangman = (props) => {
     //if every letter of the randomWord is inside of guessed letters
     if (
       props.randomWord &&
-      props.randomWord.split("").every((letter) => guessedLetters.includes(letter))
+      props.randomWord
+        .split("")
+        .every((letter) => guessedLetters.includes(letter))
     ) {
-      setWin(true)
+      setWin(true);
       // const update = async ()=>{
-      //   await updateGame(game.id,win)
+      //   await updateGame(props.games.id,win)
       // }
       // update();
-      
+
       console.log("You WON");
       history.push("/home"); // make a jsx file for Won page
     }
@@ -102,7 +101,7 @@ const Hangman = (props) => {
     <div>
       <h3>Hello {props.user.username}!</h3>
       <h1>{guess}</h1>
-      
+
       <div className="hangman">{steps[wrong]}</div>
       <div>{getButtons()}</div>
       {props.randomWord}

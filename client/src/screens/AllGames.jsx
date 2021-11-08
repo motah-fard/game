@@ -1,10 +1,8 @@
-import { useEffect, useState } from "react";
-import { deleteGame, getAllGames } from "../services";
+import { deleteGame } from "../services";
 import React from "react";
-import { RiCloseCircleLine } from 'react-icons/ri';
+import { RiCloseCircleLine } from "react-icons/ri";
 
 const AllGames = (props) => {
- 
   const ID = props.game.id;
 
   const handelDelete = async () => {

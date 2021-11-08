@@ -1,24 +1,24 @@
-import React from 'react';
-import { deleteGame, getAllGames, getGameById } from "../services/index";
+import React from "react";
+import { getAllGames } from "../services/index";
 import { useEffect, useState } from "react";
-import {Link} from "react-router-dom"
-import AllGames from './AllGames';
+import AllGames from "./AllGames";
 
 const Games = (props) => {
-    const [games, setGames] = useState([]);
-    const [ toggleFetch, setToggleFetch ] = useState(false)
-    useEffect(() => {
-        getAllGames().then((fetchGame) => setGames(fetchGame));
-        console.log(games);
-      }, [toggleFetch]);
-    return (
-        <div>
-            <h1>Hello {props.user.username}!</h1>
-            {games.map((game) => (
-                <AllGames setToggleFetch={setToggleFetch} key={game.id} game={game}/>
-            ))}
-        </div>
-    );
+  // const [games, setGames] = useState([]);
+  const { id } = props.games;
+  const [toggleFetch, setToggleFetch] = useState(false);
+  useEffect(() => {
+    getAllGames().then((fetchGame) => props.setGames(fetchGame));
+    // console.log(id);//not sur ewhy this is undefined!!!// ask tomorrow
+  }, [toggleFetch]);
+  return (
+    <div>
+      <h1>Hello {props.user.username}!</h1>
+      {props.games.map((game) => (
+        <AllGames setToggleFetch={setToggleFetch} key={game.id} game={game} />
+      ))}
+    </div>
+  );
 };
 
 export default Games;
