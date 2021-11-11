@@ -1,0 +1,27 @@
+/* * {
+    box-sizing: border-box;
+    font-family: 'Itim', cursive;
+  }
+  
+  html,
+  body,
+  #root {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    /* overflow: hidden; */
+    /* background: #272727;
+    color: aliceblue;
+  }
+  
+  body {
+    font-family: 'Itim', cursive;
+  } */ 
+  /* will use this later for test to change the theme from day to night */
