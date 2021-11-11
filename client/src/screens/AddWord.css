@@ -9,8 +9,7 @@
   padding: 100px;
 }
 
-/* .word-entry {
-    display: flex;
-    flex-direction: column;
-    padding: 20px;    
-} */
+#text {
+  width: 250px;
+  height: 40px;
+}

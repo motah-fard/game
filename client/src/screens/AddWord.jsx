@@ -43,7 +43,7 @@ const AddWord = () => {
           onChange={(e) => setText(e.target.value)}
           required
         />
-        {params.id ? (<AiOutlineEdit className="edit-icon" size="35px"/>) : (<MdOutlineCreate className="edit-icon" size="35px"/>)}
+        {params.id ? (<button type='submit' ><AiOutlineEdit className="edit-icon" size="35px"/></button>) : (<button type='submit'> <MdOutlineCreate className="edit-icon" size="35px"/></button>)}
         </div>
       </form>
     </div>
