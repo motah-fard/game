@@ -6,7 +6,8 @@ import * as THREE from "three";
 import { OrbitControls, Stars, MeshDistortMaterial } from "@react-three/drei";
 function Box() {
   return (
-    <mesh position={[6, -2.5, -10]}>
+    <div >
+    <mesh position={[6, -2.5, -10]} >
       <boxBufferGeometry attach="geometry" args={[1.2, 3, 0.5]} />
       <MeshDistortMaterial
         attach="material"
@@ -18,6 +19,7 @@ function Box() {
         metalness={0.1}
       />
     </mesh>
+    </div>
   );
 }
 function Box_2() {
