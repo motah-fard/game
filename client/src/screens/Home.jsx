@@ -17,10 +17,11 @@ const Home = (props) => {
   const { id } = props.myWord;
   return (
     <section className="hangman">
-      <div >
+      <div>
         {props.user ? (
           <>
             <div >
+              
               <Link to="/hangman">
                 <FaGamepad
                   onClick={() => handleClick(id)}
@@ -40,12 +41,13 @@ const Home = (props) => {
               <Link to="/words">
                 <FaThList className="edit-icon" size="55px" />
               </Link>
-            </div>
+              </div>
+            
           </>
         ) : (
           <></>
         )}
-        <div>
+        <div >
           <Test />
         </div>
       </div>

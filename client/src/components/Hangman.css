@@ -1,5 +1,15 @@
-.Hangman {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+@media screen and (max-width: 375px) {
+  h1{
+    font-size: 20px;
+  }
+  h3{
+    font-size: 20px;
+  }
+.hang{
+  display: grid;
+}
+.content{
+  width: 100px;
+  height: auto;
+}
 }

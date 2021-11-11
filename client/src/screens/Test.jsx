@@ -1,8 +1,6 @@
 import React from "react";
 import { Canvas } from "@react-three/fiber";
 import "./styles.css";
-// import Roboto from "./Roboto_Regular.json"
-import * as THREE from "three";
 import { OrbitControls, Stars, MeshDistortMaterial } from "@react-three/drei";
 function Box() {
   return (
@@ -170,7 +168,7 @@ const degreesToRadians = (degrees) => {
 };
 export default function Test() {
   return (
-    <div style={{ width: 500, height: 500 }} id="three">
+    <div >
       <Canvas>
         <OrbitControls />
         <Stars color="Yellow" />

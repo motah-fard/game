@@ -74,7 +74,7 @@ const Hangman = (props) => {
 
   // making the buttons
   function getButtons() {
-    const array = "abcdefghijklmnopqrstuvwxyz".toUpperCase().split("");
+    const array = "abcdefghijklmnopqrstuvwxyz-".toUpperCase().split("");
 
     return array.map((letter) => {
       return <button onClick={() => handelGuess(letter)}>{letter}</button>;
@@ -98,17 +98,20 @@ const Hangman = (props) => {
     guessedLetters.includes(letter) ? letter : "-"
   );
   return (
-    <div className="hangman">
+    <div className="hang">
+      <div className='content'>{steps[wrong]}</div>
       <div>
-        <h3>
-          Wrong Guesses: {wrong} out of {6}
-        </h3>
+        <div>
+          <h3>
+            Wrong Guesses: {wrong} out of {6}
+          </h3>
+          <div>
+            <h1>{guess}</h1>
+          </div>
+        </div>
+
+        <div>{getButtons()}</div>
       </div>
-      <div>
-        <h1>{guess}</h1>
-      </div>
-      <div>{steps[wrong]}</div>
-      <div>{getButtons()}</div>
     </div>
   );
 };
